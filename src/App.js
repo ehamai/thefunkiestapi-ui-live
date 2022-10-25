@@ -7,7 +7,7 @@ export default function App() {
   const [isInitialized, setInitialized] = useState();
 
   useEffect(() => {
-    fetch("https://ehfunkyapi3.azurewebsites.net/api/getScore?name=funkiestApiScore", {
+    fetch("/api/getScore?name=funkiestApiScore", {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -23,7 +23,7 @@ export default function App() {
   useEffect(() => {
     if(typeof(value) == "number" && isInitialized === true) {
       console.log("Making an API call!");
-      fetch("https://ehfunkyapi3.azurewebsites.net/api/updateScore?name=funkiestApiScore", {
+      fetch("/api/updateScore?name=funkiestApiScore", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
